@@ -192,6 +192,29 @@
       },
       "tags": [],
       "implicitDependencies": ["audiophile"]
+    },
+    "server-auth": {
+      "root": "libs/server/auth",
+      "sourceRoot": "libs/server/auth/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/server/auth/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/server/auth"],
+          "options": {
+            "jestConfig": "libs/server/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
